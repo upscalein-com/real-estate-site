@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: lilibautista/real-estate-site
+  repo: upscalein-com/real-estate-site
   branch: main
 
 media_folder: "public/images/uploads"
