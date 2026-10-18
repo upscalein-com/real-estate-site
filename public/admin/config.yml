@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: lilibautista/real-estate-site
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "properties"
+    label: "Properties / Listings"
+    folder: "src/content/properties"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Bedrooms", name: "bedrooms", widget: "number" }
+      - { label: "Bathrooms", name: "bathrooms", widget: "number" }
+      - { label: "Area (sqm)", name: "area", widget: "number", required: false }
+      - { label: "Status", name: "status", widget: "select", options: ["For Sale", "For Rent", "Sold"] }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Gallery", name: "gallery", widget: "list",
+          field: { label: "Image", name: "image", widget: "image" }, required: false }}
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Agent", name: "agent", widget: "string", required: false }
