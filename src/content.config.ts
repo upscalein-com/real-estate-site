@@ -1,7 +1,9 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders"; // 1. Imported the official loader
 
 const properties = defineCollection({
-    type: 'content', 
+    // 2. Added the glob loader targeting your markdown property files
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/properties" }), 
     schema: z.object({
         title: z.string(),
         price: z.string(),
